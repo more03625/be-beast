@@ -8,7 +8,7 @@
 
 ## Start with a new nest project.
 
-    - To create a new project you can clone the repo OR you can use nest CLI commands. both will produce the same outcomes.
+    - To create a new project you can clone the repo OR you can use nest *CLI commands*  both will produce the same outcomes.
 
 ```
 npm i -g @nest/cli
