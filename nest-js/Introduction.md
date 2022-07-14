@@ -2,10 +2,9 @@
 
 ## What is Nest Js
 
-    - Nest js is a framework for building efficient scalable server-side applications.
-    - Under the hood nest js makes use of HTTP Server frameworks like express (default) & fastify
-    - Nest solve the problem of Architecture. & this Architecture is heavily inspired by Angular.
-    -
+    -- Nest js is a framework for building efficient scalable server-side applications.
+    -- Under the hood nest js makes use of HTTP Server frameworks like express (default) & fastify
+    -- Nest solve the problem of Architecture. & this Architecture is heavily inspired by Angular.
 
 ## Start with a new nest project.
 
@@ -13,8 +12,6 @@
 
 ```
 npm i -g @nest/cli
-```
-
-```
 nest new projectName
+
 ```
