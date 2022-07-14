@@ -1,0 +1,6 @@
+-- Where clause is used to filter records.
+-- It is used to get only those records who full fill the condition.
+-- You can use the WHERE Clause in `SELECT`, `UPDATE`, `DELETE` statements.
+-- You can use Multiple Operators in Where clause. (=, >, <, <> OR !=, BETWEEN, LIKE, IN)
+    -- REF: https://www.w3schools.com/mySQl/mysql_where.asp
+    -- SELECT * FROM Customers WHERE NOT City = 'Berlin' 
