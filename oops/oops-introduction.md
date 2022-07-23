@@ -4,7 +4,6 @@
 
     - https://betterprogramming.pub/understand-object-oriented-programming-with-typescript-c4ff8afa40d
     - https://www.w3schools.com/js/js_class_intro.asp
-    -
 
 1. Object oriented programming centered around objects rather Than functions.
 
@@ -27,7 +26,6 @@
         - Abstract class/method
         - interfaces
         - types
-    -
 
 ### Encapsulation
 
@@ -105,7 +103,7 @@ circle.draw()
 
 ## Constructor
 
-1. \_The constructor method is called automatically when a new object is created.\_
+1. The constructor method is called automatically when a new object is created.
 
 2. Constructor is a special method.
 
