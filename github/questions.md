@@ -24,3 +24,11 @@
         - And -b create that branch if not exits.
 
     8. What is rebase?
+
+    9. How to rename a branch?
+
+    10. What is --set-upstream
+
+    11. How to delete local & remote branch?
+
+    12. How to go back to previous branch?
