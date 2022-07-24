@@ -1,6 +1,19 @@
 # Git questions:
 
-    1. What git fetch origin do?
+    1. What git fetch origin do? git fetch vs git pull.
+
+### git fetch
+
+        - The git fetch command downloads commits, files & refs from a remote repo to your local machine.
+        - git fetch is the safe version of the git pull.
+        - Because it will download the remote content but will not update the local repos working state.
+
+### git pull
+
+        - git pull is the most aggressive alternative
+
+        - It will download the content for the active local branch and immediately execute the git merge command to create a merge commit for the new remote content.
+
     2. What is git reset (hard, soft)?
     3. Make a pull from a specific branch.
 
@@ -32,3 +45,5 @@
     11. How to delete local & remote branch?
 
     12. How to go back to previous branch?
+
+    13. What is refs?
