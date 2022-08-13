@@ -47,3 +47,7 @@
     12. How to go back to previous branch?
 
     13. What is refs?
+
+    14. Rollback to last commit
+
+    15. git reset --soft vs git reset --hard
