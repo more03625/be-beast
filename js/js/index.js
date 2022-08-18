@@ -7,15 +7,10 @@ let myNameTwo = {
   lastName: "Tendulkar",
 };
 
-
-  let printMyName =  function (hometown, state) {
-    console.log(this.firstName, this.lastName + " " + hometown + " " +  state);
-  }
-
+let printMyName = function (hometown, state) {
+  console.log(this.firstName, this.lastName + " " + hometown + " " + state);
+};
 
 // printMyName.call(myNameOne, "Mumbai", "India")
-printMyName.apply(myNameTwo, ["Mumbai", "Maharashtra"])
-let ok = printMyName.bind(myNameTwo, "MKBHD", "Maharashtra")()
-  
-
-
+printMyName.apply(myNameTwo, ["Mumbai", "Maharashtra"]);
+let ok = printMyName.bind(myNameTwo, "MKBHD", "Maharashtra")();

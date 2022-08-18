@@ -16,6 +16,13 @@
 
 8. Splice Vs Slice
 
+9. implicit & explicit bindings
+
+10. Infinite curring.
+11. Callback function.
+12. function statement Vs. Function Expression Vs. function declaration.
+13. Package.json Vs Package.lock
+
 1) HackerRank.
 2) Technical.
 3) Client Technical.
