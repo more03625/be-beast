@@ -16,11 +16,11 @@
 
     1. Sorting Algo.
 
-Array -> crud, search
-Linked List -> (singly, doubly, circular) crud, search, insertion, deletion
-Stack -> crud, pop(), push()
-Queue -> crud, enqueue(), dequeue()
-Hashtable -> crud, access, remove
-Tree -> only BST, crud, parent node, left/right child how to access, how to traverse just left side, how to traverse just right side, DFS, BFS
-Heap -> minHeap, maxHeap, crud
-Graph -> basic graph theory, basic operations, crud
+1. Array -> crud, search
+2. Linked List -> (singly, doubly, circular) crud, search, insertion, deletion
+3. Stack -> crud, pop(), push()
+4. Queue -> crud, enqueue(), dequeue()
+5. Hashtable -> crud, access, remove
+6. Tree -> only BST, crud, parent node, left/right child how to access, how to traverse just left side, how to traverse just right side, DFS, BFS
+7. Heap -> minHeap, maxHeap, crud
+8. Graph -> basic graph theory, basic operations, crud
