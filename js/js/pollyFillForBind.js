@@ -1,15 +1,14 @@
-Function.prototype.myBind = function () { 
-    console.log('OK')
-}
+Function.prototype.myBind = function () {
+  console.log("OK");
+};
 
 let userObject = {
-    firstName: "Rahul",
-    lastName:"More"
-}
+  firstName: "Rahul",
+  lastName: "More",
+};
 
-let printMyName = function () { 
-    console.log(this.firstName, this.lastName);
-}
+let printMyName = function () {
+  console.log(this.firstName, this.lastName);
+};
 
-let printUsersName = printMyName.myBind(userObject)()
-
+let printUsersName = printMyName.myBind(userObject)();

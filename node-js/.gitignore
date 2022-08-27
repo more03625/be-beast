@@ -3,9 +3,10 @@
 /node_modules
 /resume
 /images
+/projects
 # /docs
 # /examples
-dump.rdb
+
 # Logs
 logs
 *.log
@@ -41,6 +42,3 @@ lerna-debug.log*
 .env.*
 google-credentials.json
 docker-build.sh
-
-# Files
-questions.md

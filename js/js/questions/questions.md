@@ -22,6 +22,9 @@
 11. Callback function.
 12. function statement Vs. Function Expression Vs. function declaration.
 13. Package.json Vs Package.lock
+    What is a service worker
+    What is IndexedDB
+    What is eval
 
 1) HackerRank.
 2) Technical.
