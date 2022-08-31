@@ -25,6 +25,8 @@
     What is a service worker
     What is IndexedDB
     What is eval
+    Write a pollifill for map, filter, reduce, bind, call. create your own functions.
+    Why we should not use event listners. what is event deligation?
 
 1) HackerRank.
 2) Technical.

@@ -41,3 +41,24 @@
 3. SREM hobbies coding: removes coding from the list.
 
 ## Hashes
+
+## Video 2 Redis
+
+1. What is redis? Use cases & benefits of redis.
+2. Why it is suitable for microservice apps.
+3. How redis supports multiple data formate.
+4. Data persistent.
+5. Redis on flash
+6. Scaling redis
+7. Replicate to geographic points.
+8. Run Kubernates on redis.
+
+Hi Prateek,
+My name is Rahul More. I am working as Senior Software Engineer at Squareboat. i mostly work on backend technologies.
+I have 3.5 yrs of experience of Full Stack software development. in this 3.5 Years of journey i have created lot of projects, from different different domains, most of that projects i have created from scratch only.
+
+I have created projects like E-commerce Apps, Job Websites, Conference Apps, My own crypto currency like bitcoin, & Recently i have created Coupons, Cashback Website which is as same as Cashkaro.com.
+
+TO Build these kinds of websites OR Apps i have use technologies like ReactJs, NodeJS, NestJs, MySql, Sometimes i have use mongodb as well.
+
+Apart from the tech i like to sing a song, like to play foosball, i trade crypto currencies as well.
