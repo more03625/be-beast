@@ -35,4 +35,4 @@ const lastOccuranceOfX = (arr, arrLength, x) => {
 // } else {
 //     return -1
 // }
-// console.log(lastOccuranceOfX(arr, arrLength, x));
+console.log(lastOccuranceOfX(arr, arrLength, x));

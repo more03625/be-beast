@@ -4,11 +4,12 @@ const largestSumInArray = (arr, n) => {
     let sum = 0, max = arr[0]
 
     for (let i = 0; i < n; i++) {
-        sum += arr[i];
-        if (sum > max) {
+        // sum += arr[i];
+        sum = sum + arr[i] // 0 + (-2) =  -2
+        if (sum > max) { // -2 > 0
             max = sum;
         }
-        if (sum < 0) {
+        if (0 > sum) { //  0 > -2
             sum = 0 // Reset to `0`
         }
     }
