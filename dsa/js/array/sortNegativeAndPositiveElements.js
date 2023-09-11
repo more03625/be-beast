@@ -29,3 +29,5 @@ const sortNegativeAndPositiveElements = (array) => {
 
 const array = [-6, 3, -8, 10, 5, -7, -9, 12, -4, 2]
 console.log('sortNegativeAndPositiveElements', sortNegativeAndPositiveElements(array));
+
+// Similar to move negative

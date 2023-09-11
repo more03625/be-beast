@@ -1,6 +1,8 @@
 function isPrime(n) {
     // since 0 and 1 is not prime return false.
-    if (n == 1 || n == 0) return false;
+    if (n == 1 || n == 0) {
+        return false;
+    } 
 
     // Run a loop from 2 to n-1
     for (var i = 2; i < n; i++) {
