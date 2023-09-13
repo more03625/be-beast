@@ -74,3 +74,14 @@ console.log('Duplicate Number is ', findDuplicateElements(arr));
 /*
    End of 3rd Method
 */
+
+const findDuplicateInSortedArray = (array) => {
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] === array[i + 1]) {
+            console.log('Duplicate ===> ', array[i]);
+        }
+    }
+}
+
+const duplicateSortedArray = [3, 6, 8, 8, 10, 12, 15, 15, 15, 20];
+findDuplicateInSortedArray(duplicateSortedArray);
