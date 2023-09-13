@@ -83,5 +83,29 @@ const findDuplicateInSortedArray = (array) => {
     }
 }
 
+const findDuplicateInSortedORUnSortedArray = (array) => {
+
+    for (let i = 0; i < array.length; i++) {
+        let count = 1;
+        if (array[i] !== -1) {
+            for (let j = i + 1; j < array.length; j++) {
+
+                if (array[i] === array[j]) {
+                    count++
+                    array[j] = -1
+                }
+            }
+
+            if (count > 1) {
+                console.log(`${array[i]} is a duplicate number is an given array, found ${count} times`);
+            }
+        }
+    }
+}
+
+const findDuplicateInSortedUnSortedArrayList = [3, 6, 8, 8, 10, 12, 15, 15, 15, 20];
 const duplicateSortedArray = [3, 6, 8, 8, 10, 12, 15, 15, 15, 20];
+
+findDuplicateInSortedORUnSortedArray(findDuplicateInSortedUnSortedArrayList);
 findDuplicateInSortedArray(duplicateSortedArray);
+
