@@ -16,9 +16,6 @@ const insertAt = (array, arrayLength, insertAtPosition, valueToInsert) => {
     array[insertAtPosition] = valueToInsert;
 
     return array;
-
-    Array.apply
-
 }
 
 const main = (array, length, insertAtPosition, valueToInsert) => {

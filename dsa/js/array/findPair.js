@@ -29,4 +29,4 @@ const array = [6, 3, 8, 10, 16, 7, 5, 2, 9, 14];
 const k = 10;
 
 // findPair(array, k)
-findPairs(array, k)
+findPairs(array, k);
