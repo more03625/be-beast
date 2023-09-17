@@ -33,10 +33,23 @@ const append = (head, data) => {
 }
 
 const display = (head) => {
+    let c =0
     let current = head;
     while (current) {
         current = current.next;
+        c++
     }
+    console.log(c);
+}
+
+const recursiveDisplay = (head) => {
+
+    if (head === null) {
+        return;
+    }
+
+    console.log("recursiveDisplay ===> ", head.data);
+    recursiveDisplay(head.next)
 }
 
 // Example usage:
@@ -46,4 +59,5 @@ head = append(head, 2); //
 head = append(head, 3);
 
 console.log("Linked List =====>  ", head);
-// display(head);
+recursiveDisplay(head)
+display(head);
