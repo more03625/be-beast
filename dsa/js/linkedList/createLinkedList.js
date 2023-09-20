@@ -39,7 +39,7 @@ const display = (head) => {
         current = current.next;
         c++
     }
-    console.log(c);
+    console.log("Count of Element in LinkedList ====> ", c);
 }
 
 const recursiveDisplay = (head) => {
@@ -72,10 +72,44 @@ const recursiveSumOfElements = (node) => {
     }
 }
 
+const findMinMax = (node) => {
+    console.log('All Elements of LinkedList ===> ', node);
+
+    if (!node) {
+        return null
+    }
+
+    let current = node;
+    let maxElement = node.data, minElement = node.data;
+
+    while (current) {
+        if (current.data > maxElement) {
+            maxElement = current.data;
+        }
+
+        if (current.data < minElement) {
+            minElement = current.data
+        }
+
+        current = current.next;
+    }
+
+    return { maxElement, minElement }
+}
+
+const findMinMaxRecursivly = (node) => {
+    if (!node) {
+        return null
+    }
+    const valueInRest =  findMinMaxRecursivly(node.next);
+
+    return Math.min(valueInRest, node.data)
+}
+
 // Example usage:
 let head = null;
 head = append(head, 1); // head = {data:1, next: null}
-head = append(head, 2); //
+head = append(head, 92); //
 head = append(head, 3);
 
 
@@ -83,3 +117,6 @@ recursiveDisplay(head)
 display(head);
 console.log('Sum Of elements ====>', sumOfElements(head));
 console.log('recursiveSumOfElements ====>', recursiveSumOfElements(head));
+console.log('findMinMax ====>', findMinMax(head));
+console.log('findMinMaxRecursivly ===>', findMinMaxRecursivly(head));
+
