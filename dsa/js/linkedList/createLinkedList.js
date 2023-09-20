@@ -33,7 +33,7 @@ const append = (head, data) => {
 }
 
 const display = (head) => {
-    let c =0
+    let c = 0
     let current = head;
     while (current) {
         current = current.next;
@@ -52,12 +52,34 @@ const recursiveDisplay = (head) => {
     recursiveDisplay(head.next)
 }
 
+const sumOfElements = (node) => {
+
+    let sum = 0;
+    let current = node;
+
+    while (current) {
+        sum = sum + current.data;
+        current = current.next
+    }
+    return sum;
+}
+
+const recursiveSumOfElements = (node) => {
+    if (node) {
+        return recursiveSumOfElements(node.next) + node.data
+    } else {
+        return 0
+    }
+}
+
 // Example usage:
 let head = null;
 head = append(head, 1); // head = {data:1, next: null}
 head = append(head, 2); //
 head = append(head, 3);
 
-console.log("Linked List =====>  ", head);
+
 recursiveDisplay(head)
 display(head);
+console.log('Sum Of elements ====>', sumOfElements(head));
+console.log('recursiveSumOfElements ====>', recursiveSumOfElements(head));
