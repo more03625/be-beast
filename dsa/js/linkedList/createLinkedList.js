@@ -97,26 +97,145 @@ const findMinMax = (node) => {
     return { maxElement, minElement }
 }
 
-const findMinMaxRecursivly = (node) => {
+const findMinMaxRecursively = (node) => {
     if (!node) {
         return null
     }
-    const valueInRest =  findMinMaxRecursivly(node.next);
+    const valueInRest = findMinMaxRecursively(node.next);
 
     return Math.min(valueInRest, node.data)
+}
+
+const linerSearch = (node, keyToSearch) => {
+
+    if (!node) {
+        return -1
+    }
+
+    if (!keyToSearch) {
+        return 'Please provide key to search in linkedlist!'
+    }
+
+    let current = node;
+
+    while (current) {
+        if (current.data === keyToSearch) {
+            return current
+        }
+        current = current.next
+    }
+    return -1;
+
+}
+
+const recursiveLinerSearch = (node, keyToSearch) => {
+    if (!node) {
+        return -1
+    }
+
+    if (!keyToSearch) {
+        return 'Please provide key to search in linked list!'
+    }
+
+    if (node.data === keyToSearch) {
+        return node
+    }
+
+    return recursiveLinerSearch(node.next, keyToSearch)
+}
+
+const moveNodeToFront = (node, keyToSearch) => {
+    if (!node) {
+        return -1
+    }
+
+    if (!keyToSearch) {
+        return 'Please provide key to search in LinkedList'
+    }
+
+    if (node.data === keyToSearch) {
+        return node;
+    }
+
+    let current = node;
+    let previous = null;
+
+    while (current && current.data !== keyToSearch) {
+        previous = current;
+        current = current.next;
+    }
+
+    if (!current) {
+        return -1;
+    }
+
+    previous.next = current.next;
+    current.next = node;
+
+    return current;
+}
+
+
+const insertNewNode = (node, data, position) => {
+
+    //  {"data":1,"next":{"data":2,"next":{"data":3,"next":null}}}
+
+    // Output: {"data":1,"next":{"data":2,"next":{"data":93,"next":{"data":3,"next":null}}}}
+
+    if (!node || !data) {
+        return node;
+    }
+
+    let newNode = createNode(data);
+
+    if (position === 0) {
+        newNode.next = node;
+        return JSON.stringify(newNode);
+
+    } else if (position > 0) {
+
+        let current = node;
+        let previous = null;
+        let currentPosition = 1;
+
+        while (currentPosition < position && current) {
+            previous = current;
+            current = current.next
+            currentPosition++
+        }
+
+        if (currentPosition === position) {
+            newNode.next = current;
+
+            if (previous) {
+                previous.next = newNode;
+            } else {
+                // If there's no previous node, it means we're inserting at the beginning.
+                return JSON.stringify(newNode);;
+            }
+        } else {
+            return { msg: 'Position Out Of Range!' };
+        }
+
+        return JSON.stringify(node);
+    }
 }
 
 // Example usage:
 let head = null;
 head = append(head, 1); // head = {data:1, next: null}
-head = append(head, 92); //
+head = append(head, 2); //
 head = append(head, 3);
 
 
 recursiveDisplay(head)
 display(head);
-console.log('Sum Of elements ====>', sumOfElements(head));
-console.log('recursiveSumOfElements ====>', recursiveSumOfElements(head));
-console.log('findMinMax ====>', findMinMax(head));
-console.log('findMinMaxRecursivly ===>', findMinMaxRecursivly(head));
-
+// console.log('Sum Of elements ====>', sumOfElements(head));
+// console.log('recursiveSumOfElements ====>', recursiveSumOfElements(head));
+// console.log('findMinMax ====>', findMinMax(head));
+// console.log('findMinMaxRecursively ===>', findMinMaxRecursively(head));
+// console.log('linerSearch ===> ', linerSearch(head, 92));
+// console.log('recursiveLinerSearch ===> ', recursiveLinerSearch(head, 95));
+// console.log('Original Node:', head);
+// console.log('moveNodeToFront ===> ', moveNodeToFront(head, 92));
+console.log('insertNewNode ===> ', insertNewNode(head, 93, 3));
