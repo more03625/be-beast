@@ -5,7 +5,7 @@ function isPrime(n) {
     } 
 
     // Run a loop from 2 to n-1
-    for (var i = 2; i < n; i++) {
+    for (let i = 2; i < n; i++) {
 
         // if the number is divisible by i, then n is not a prime number.
         if (n % i == 0) return false;
@@ -16,7 +16,7 @@ function isPrime(n) {
 
 const sumOfPrimeNumber = (n) => {
     let count = 0
-    for (var i = 1; i <= n; i++) {
+    for (let i = 1; i <= n; i++) {
         // check if current number is prime
         if (isPrime(i)) {
             count = count + i

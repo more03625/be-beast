@@ -175,7 +175,6 @@ const moveNodeToFront = (node, keyToSearch) => {
     return current;
 }
 
-
 const insertNewNode = (node, data, position) => {
 
     //  {"data":1,"next":{"data":2,"next":{"data":3,"next":null}}}
@@ -221,15 +220,149 @@ const insertNewNode = (node, data, position) => {
     }
 }
 
+const insertAtLast = (node, data) => {
+
+    const newNode = createNode(data);
+
+    if (!node) {
+        return newNode;
+    }
+
+    let current = node;
+
+    while (current.next) {
+        current = current.next
+    }
+
+    if (!current.next) {
+        current.next = newNode;
+    }
+
+    return JSON.stringify(node);
+}
+
+const insertInSortedLinkedList = (node, data) => {
+
+    // Draw diagram of LinkedList to Understand code & Logic Quickly.
+
+    const newNode = createNode(data);
+
+    if (!node) {
+        return newNode;
+    }
+
+    let current = node;
+    let previous = null;
+
+    while (current && current.data < newNode.data) {
+        previous = current;
+        current = current.next;
+    }
+
+    if (!previous) {
+        newNode.next = current;
+        return JSON.stringify(newNode);
+    }
+
+    previous.next = newNode;
+    newNode.next = current;
+
+    return JSON.stringify(node);
+}
+
+const deleteNode = (node, position) => {
+    if (!node) {
+        return 'Linked List cannot be empty!';
+    }
+
+    // Delete first Node From LinkedList
+    if (position === 0) {
+        return node.next;
+    } else if (position > 0) {
+        let current = node;
+        let previous = null;
+        let currentPosition = 0;
+
+        while (current && currentPosition < position) {
+            previous = current;
+            current = current.next;
+            currentPosition++
+        }
+
+        if (!current) {
+            return { msg: "Position cannot exceeds length of Linked List!" }
+        }
+
+        previous.next = current.next;
+
+        return JSON.stringify(node);
+    } else {
+        return { msg: "Invalid Position!" }
+    }
+}
+
+const checkIfLinkedListIsSorted = (node) => {
+
+    if (!node) {
+        return { msg: "Linked List is Empty!" };
+    }
+
+    let current = node.next;
+    let q = node;
+
+    while (current) {
+        if (current.data < q.data) { // Checks for isAscending Sorted Only.
+            return { msg: "Linked List is UnSorted!", success: false };
+        }
+
+        q = current;
+        current = current.next
+    }
+
+    return { msg: "Linked List is Sorted!", success: true }
+}
+
+const removeDuplicatesFromSortedLinkedList = (node) => {
+
+    const isLinkedListSorted = checkIfLinkedListIsSorted(node);
+
+    if (!isLinkedListSorted.success) {
+        return isLinkedListSorted.msg;
+    }
+
+    if (!node) {
+        return { msg: "Linked List is Empty!" };
+    }
+
+    let current = node.next;
+    let previous = node;
+
+
+    while (previous && current) {
+        if (current.data !== previous.data) {
+            previous = current;
+            current = current.next;
+        } else {
+            previous.next = current.next;
+            current = previous.next;
+        }
+    }
+
+    return JSON.stringify(node);
+}
+
 // Example usage:
 let head = null;
-head = append(head, 1); // head = {data:1, next: null}
-head = append(head, 2); //
 head = append(head, 3);
+head = append(head, 5); //
+head = append(head, 5); // head = {data:1, next: null}
+head = append(head, 8);
+head = append(head, 8);
+head = append(head, 8);
+head = append(head, 9);
 
-
-recursiveDisplay(head)
-display(head);
+// recursiveDisplay(head)
+// display(head);
 // console.log('Sum Of elements ====>', sumOfElements(head));
 // console.log('recursiveSumOfElements ====>', recursiveSumOfElements(head));
 // console.log('findMinMax ====>', findMinMax(head));
@@ -238,4 +371,10 @@ display(head);
 // console.log('recursiveLinerSearch ===> ', recursiveLinerSearch(head, 95));
 // console.log('Original Node:', head);
 // console.log('moveNodeToFront ===> ', moveNodeToFront(head, 92));
-console.log('insertNewNode ===> ', insertNewNode(head, 93, 3));
+// console.log('insertNewNode ===> ', insertNewNode(head, 93, 3));
+// console.log('insertAtLast', insertAtLast(null, 25));
+// console.log('insertInSortedLinkedList', insertInSortedLinkedList(head, 0));
+// console.log('deleteNode', deleteNode(head, 0));
+// console.log('checkIfLinkedListIsSorted', checkIfLinkedListIsSorted(head));
+console.log('removeDuplicatesFromSortedLinkedList', removeDuplicatesFromSortedLinkedList(head));
+
