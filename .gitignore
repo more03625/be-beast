@@ -1,8 +1,10 @@
 # compiled output
 /dist
 /node_modules
+/reports
 /resume
 /images
+/dsa/images
 # /docs
 # /examples
 dump.rdb

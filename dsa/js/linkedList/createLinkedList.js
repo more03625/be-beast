@@ -304,7 +304,7 @@ const deleteNode = (node, position) => {
 const checkIfLinkedListIsSorted = (node) => {
 
     if (!node) {
-        return { msg: "Linked List is Empty!" };
+        return { msg: "Linked List is Empty!", success: false };
     }
 
     let current = node.next;
@@ -351,15 +351,70 @@ const removeDuplicatesFromSortedLinkedList = (node) => {
     return JSON.stringify(node);
 }
 
+const reverseLinkedList = (node) => {
+
+    if (!node) {
+        return { msg: "Linked List is Empty!", success: false };
+    }
+
+    let previous = null;
+    let current = node;
+    let next = null;
+
+    while (current) {
+        next = current.next;
+        current.next = previous;
+        previous = current;
+        current = next;
+    }
+
+    node = previous;
+    return JSON.stringify(node);
+}
+
+const recursiveReverseLinkedList = (node) => {
+    // Base case: If the current node is null or the last node,
+    // return it as it becomes the new head of the reversed list.
+    if (!node || !node.next) {
+        return node;
+    }
+
+    // Recursively reverse the rest of the list.
+    const reversedList = recursiveReverseLinkedList(node.next);
+
+    // Make the next node's next pointer point back to the current node,
+    // effectively reversing the link.
+    node.next.next = node;
+
+    // Set the current node's next pointer to null to avoid cycles.
+    node.next = null;
+
+    // Return the new head of the reversed list (which was the last node).
+    return reversedList;
+}
+
+const concatenateLinkedList = (nodeOne, nodeTwo) => {
+
+    if (!nodeTwo) {
+        return nodeOne;
+    }
+
+    let current = nodeOne;
+
+    while (current.next) {
+        current = current.next
+    }
+
+    current.next = nodeTwo;
+
+    return JSON.stringify(nodeOne);
+}
+
 // Example usage:
 let head = null;
+head = append(head, 1);
+head = append(head, 2);
 head = append(head, 3);
-head = append(head, 5); //
-head = append(head, 5); // head = {data:1, next: null}
-head = append(head, 8);
-head = append(head, 8);
-head = append(head, 8);
-head = append(head, 9);
 
 // recursiveDisplay(head)
 // display(head);
@@ -376,5 +431,17 @@ head = append(head, 9);
 // console.log('insertInSortedLinkedList', insertInSortedLinkedList(head, 0));
 // console.log('deleteNode', deleteNode(head, 0));
 // console.log('checkIfLinkedListIsSorted', checkIfLinkedListIsSorted(head));
-console.log('removeDuplicatesFromSortedLinkedList', removeDuplicatesFromSortedLinkedList(head));
-
+// console.log('removeDuplicatesFromSortedLinkedList', removeDuplicatesFromSortedLinkedList(head));
+// console.log('reverseLinkedList', reverseLinkedList(head));
+// console.log('recursiveReverseLinkedList', recursiveReverseLinkedList(head));
+const headTwo = {
+    "data": 4,
+    "next": {
+        "data": 5,
+        "next": {
+            "data": 6,
+            "next": null
+        }
+    }
+}
+console.log('concatenateLinkedList', concatenateLinkedList(head, headTwo));
