@@ -395,6 +395,10 @@ const recursiveReverseLinkedList = (node) => {
 
 const concatenateLinkedList = (nodeOne, nodeTwo) => {
 
+    if (!nodeOne) {
+        return nodeTwo;
+    }
+
     if (!nodeTwo) {
         return nodeOne;
     }
@@ -410,11 +414,56 @@ const concatenateLinkedList = (nodeOne, nodeTwo) => {
     return JSON.stringify(nodeOne);
 }
 
+const mergeLinkedList = (nodeOne, nodeTwo) => { // Revise
+    if (!nodeOne) {
+        return nodeTwo
+    }
+
+    if (!nodeTwo) {
+        return nodeOne;
+    }
+
+
+    let mergedList = null;
+    let tail = null;
+
+    while (nodeOne && nodeTwo) {
+        if (nodeOne.data < nodeTwo.data) {
+            if (!mergedList) {
+                mergedList = nodeOne;
+                tail = nodeOne
+            } else {
+                tail.next = nodeOne;
+                tail = tail.next;
+            }
+
+            nodeOne = nodeOne.next;
+        } else {
+            if (!mergedList) {
+                mergedList = nodeTwo;
+                tail = nodeTwo;
+            } else {
+                tail.next = nodeTwo;
+                tail = tail.next;
+            }
+            nodeTwo = nodeTwo.next;
+        }
+    }
+
+    if (nodeOne) {
+        tail.next = nodeOne;
+    } else if (nodeTwo) {
+        tail.next = nodeTwo;
+    }
+
+    return JSON.stringify(mergedList);
+}
+
 // Example usage:
 let head = null;
 head = append(head, 1);
-head = append(head, 2);
 head = append(head, 3);
+head = append(head, 5);
 
 // recursiveDisplay(head)
 // display(head);
@@ -435,13 +484,14 @@ head = append(head, 3);
 // console.log('reverseLinkedList', reverseLinkedList(head));
 // console.log('recursiveReverseLinkedList', recursiveReverseLinkedList(head));
 const headTwo = {
-    "data": 4,
+    "data": 2,
     "next": {
-        "data": 5,
+        "data": 4,
         "next": {
             "data": 6,
             "next": null
         }
     }
 }
-console.log('concatenateLinkedList', concatenateLinkedList(head, headTwo));
+// console.log('concatenateLinkedList', concatenateLinkedList(head, headTwo));
+console.log('mergeLinkedList', mergeLinkedList(head, headTwo));
