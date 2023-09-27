@@ -36,6 +36,7 @@ const display = (head) => {
     let c = 0
     let current = head;
     while (current) {
+        console.log("Display ===> ", current);
         current = current.next;
         c++
     }
@@ -459,6 +460,119 @@ const mergeLinkedList = (nodeOne, nodeTwo) => { // Revise
     return JSON.stringify(mergedList);
 }
 
+const createLoopInLinkedList = () => {
+    const head = createNode(1)
+    const second = createNode(2)
+    const third = createNode(3)
+    const fourth = createNode(4)
+
+    head.next = second;
+    second.next = third;
+    third.next = fourth
+
+    // Creating Loop by pointing 4th Node to the 2nd Node.
+    fourth.next = second;
+    return head;
+}
+
+const checkLoopInLinkedList = (node) => {
+    if (!node) {
+        return false;
+    }
+
+    let current = node;
+    let p = current;
+    let q = current;
+
+    do {
+        p = p.next;
+        q = q.next;
+        q = q !== null ? q.next : null;
+
+    } while (p && q && p !== q);
+
+    return p === q ? true : false;
+}
+
+const circularLinkedList = () => {
+    const head = createNode(8);
+    const second = createNode(3);
+    const third = createNode(9);
+    const fourth = createNode(6);
+    const fifth = createNode(2);
+
+    head.next = second;
+    second.next = third;
+    third.next = fourth;
+    fourth.next = fifth;
+    fifth.next = head;
+
+    return head;
+}
+
+const displayCircularLinkedList = (node) => {
+
+    let current = node;
+    do {
+        console.log(current, "InSide Circular LinkedList");
+        current = current.next;
+    } while (current !== node);
+}
+
+const displayCircularLinkedListRecursively = (node, initialNode, flag = 0) => {
+
+    if (!node) {
+        return { success: false, message: "Required node Parameter" }
+    }
+
+    if (!initialNode) {
+        return { success: false, message: "Required initialNode Parameter" }
+    }
+
+    if (flag === 0 || node !== initialNode) {
+        flag = 1;
+        console.log(node.data);
+        displayCircularLinkedListRecursively(node.next, initialNode, flag);
+    }
+    flag = 0;
+}
+
+const insertInCircularLinkedList = (node, position, data) => {
+
+    if (!node) {
+        return { success: false, message: "Required node Parameter" }
+    }
+
+    if (!data) {
+        return { success: false, message: "Required data Parameter" }
+    }
+    const newNode = createNode(data);
+    let current = node;
+
+    if (position === 0) {
+        newNode.next = node;
+
+        while (current.next !== node) {
+            current = current.next;
+        }
+
+        current.next = newNode; // Update the last node's next reference to the new node.
+        return displayCircularLinkedListRecursively(node, node)
+    } else {
+        let currentPosition = 1
+
+        while (currentPosition < position) {
+            current = current.next
+            currentPosition++
+        }
+
+        newNode.next = current.next;
+        current.next = newNode;
+
+        return displayCircularLinkedListRecursively(node, node)
+    }
+}
+
 // Example usage:
 let head = null;
 head = append(head, 1);
@@ -494,4 +608,13 @@ const headTwo = {
     }
 }
 // console.log('concatenateLinkedList', concatenateLinkedList(head, headTwo));
-console.log('mergeLinkedList', mergeLinkedList(head, headTwo));
+// console.log('mergeLinkedList', mergeLinkedList(head, headTwo));
+
+// const hasLoopLinkedList = createLoopInLinkedList();
+// console.log('checkLoopInLinkedList', checkLoopInLinkedList(hasLoopLinkedList));
+
+const hasCircularLinkedList = circularLinkedList();
+// console.log('displayCircularLinkedList', displayCircularLinkedList(hasCircularLinkedList));
+
+// console.log('displayCircularLinkedListRecursively', displayCircularLinkedListRecursively(hasCircularLinkedList, hasCircularLinkedList));
+console.log('insertInCircularLinkedList', insertInCircularLinkedList(hasCircularLinkedList, 1, 20));
