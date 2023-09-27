@@ -573,6 +573,41 @@ const insertInCircularLinkedList = (node, position, data) => {
     }
 }
 
+const deleteFromCircularLinkedList = (node, position) => {
+
+    if (!node) {
+        return { success: false, message: "Required node Parameter" }
+    }
+
+    if (position === 0) {
+        let current = node;
+
+        while (current.next !== node) {
+            current = current.next;
+        }
+        current.next = node.next;
+        return displayCircularLinkedListRecursively(node.next, node.next);
+
+    } else {
+        let current = node;
+        let previous = null
+        let currentPosition = 0
+
+        while (currentPosition < position) {
+            previous = current
+            current = current.next;
+            currentPosition++;
+
+            if (current === node) {
+                return { success: false, message: "Position exceeds the length of the circular list" };
+            }
+        }
+
+        previous.next = current.next
+        return displayCircularLinkedListRecursively(node, node)
+    }
+}
+
 // Example usage:
 let head = null;
 head = append(head, 1);
@@ -617,4 +652,5 @@ const hasCircularLinkedList = circularLinkedList();
 // console.log('displayCircularLinkedList', displayCircularLinkedList(hasCircularLinkedList));
 
 // console.log('displayCircularLinkedListRecursively', displayCircularLinkedListRecursively(hasCircularLinkedList, hasCircularLinkedList));
-console.log('insertInCircularLinkedList', insertInCircularLinkedList(hasCircularLinkedList, 1, 20));
+// console.log('insertInCircularLinkedList', insertInCircularLinkedList(hasCircularLinkedList, 1, 20));
+console.log('deleteFromCircularLinkedList', deleteFromCircularLinkedList(hasCircularLinkedList, 2));
