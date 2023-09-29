@@ -1,0 +1,20 @@
+{
+  "name": "dsa",
+  "version": "1.0.0",
+  "description": "1. Array\r     2. Linked List (Search, Insert, Delete), Singular, Dubbly Linked List\r     3. Stack (FIFO, POP, PUSH)\r     4. Queues (Rabbit MQ)\r     5. Hash Map (CRUD)\r     6. Trees (BST is IMP)\r     7. Heap\r     8. Graphs\r     9. Strings",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "typescript": "^5.2.2"
+  },
+  "devDependencies": {
+    "@types/connect": "^3.4.36",
+    "@types/serve-static": "^1.15.3",
+    "connect": "^3.7.0"
+  }
+}

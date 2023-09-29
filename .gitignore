@@ -1,5 +1,6 @@
 # compiled output
 /dist
+/dsa/dist/
 /node_modules
 /reports
 /resume
