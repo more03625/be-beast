@@ -30,7 +30,6 @@ const display = <T>(list: INode<T> | null): void => {
     let current: INode<T> | null = list;
 
     while (current) {
-        console.log("Display ====>", current.data);
         current = current.next
     }
 }
@@ -42,7 +41,8 @@ const createStackUsingLL = <T>(list: INode<T> | null) => {
         push(x: T): INode<T> | null {
             const newNode = createLLNode(x);
             newNode.next = list;
-            return newNode;
+            list = newNode
+            return list;
         },
         pop(): INode<T> | null {
             list = list ? list.next : null
@@ -59,7 +59,7 @@ const createStackUsingLL = <T>(list: INode<T> | null) => {
         stackTop(): T | null {
             return list ? list.data : null
         },
-        isEmpty(): boolean | null {
+        isEmpty(): boolean {
             return list ? false : true;
         },
         isFull(x: T): boolean | null {
@@ -77,12 +77,18 @@ let list: INode<number> | null = null
 // list = appendNodeInLL(list, 9);
 // list = appendNodeInLL(list, 10);
 
-display(list)
+// display(list)
 const theStack = createStackUsingLL(list)
-console.log("Linked List ===>", theStack.list);
-console.log("Linked List after pushed ===>", JSON.stringify(theStack.push(11)));
-console.log("Linked List after POP ===>", JSON.stringify(theStack.pop()));
-console.log("Linked List after Peak ===>", theStack.peek(3));
-console.log("Stack Top ===>", theStack.stackTop());
-console.log("Is Empty ===>", theStack.isEmpty());
-console.log("Is Full ===>", theStack.isFull(30));
+// console.log("Linked List ===>", theStack.list);
+// console.log("Linked List after pushed ===>", JSON.stringify(theStack.push(11)));
+// console.log("Linked List after POP ===>", JSON.stringify(theStack.pop()));
+// console.log("Linked List after Peak ===>", theStack.peek(3));
+// console.log("Stack Top ===>", theStack.stackTop());
+// console.log("Is Empty ===>", theStack.isEmpty());
+// console.log("Is Full ===>", theStack.isFull(30));
+
+export {
+    appendNodeInLL,
+    display,
+    theStack,
+}
