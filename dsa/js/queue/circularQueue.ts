@@ -15,7 +15,7 @@ const createCircularQueue = <T>(size: number): CircularQueue<T> => {
 }
 
 const isCircularQueueEmpty = <T>(queue: CircularQueue<T>): boolean => {
-    return queue.front === -1;
+    return queue.front === queue.rear;
 }
 
 const isCircularQueueFull = <T>(queue: CircularQueue<T>) => {
@@ -29,9 +29,7 @@ const enqueueCircularQueue = <T>(queue: CircularQueue<T>, item: T): boolean => {
     if (isCircularQueueFull(queue)) {
         return false; // Queue is full
     }
-    if (isCircularQueueEmpty(queue)) {
-        queue.front = 0;
-    }
+
     queue.rear = (queue.rear + 1) % queue.size;
     queue.data[queue.rear] = item;
     return true;
@@ -41,11 +39,22 @@ const dequeueCircularQueue = <T>(queue: CircularQueue<T>): T | undefined => {
     if (isCircularQueueEmpty(queue)) {
         return undefined; // Queue is empty
     }
+
     const item = queue.data[queue.front];
     if (queue.front === queue.rear) {
-        queue.front = queue.rear = -1;
+        // Case: If front reached at the end of the queue.
+        queue.front = -1;
+        queue.rear = -1;
     } else {
+
+        // queue.rear = (0+1) % 5 = 1
+        // queue.rear = (1+1) % 5 = 2
+        // queue.rear = (2+1) % 5 = 3
+        // queue.rear = (3+1) % 5 = 4
+        // queue.rear = (4+1) % 5 = 0
+
         queue.front = (queue.front + 1) % queue.size;
+        queue.data[queue.front] = undefined; // Mark as removed
     }
     return item;
 }
@@ -58,3 +67,14 @@ const peekCircularQueue = <T>(queue: CircularQueue<T>): T | undefined => {
 }
 
 // Understand this code later.
+
+const queue = createCircularQueue(5)
+
+enqueueCircularQueue(queue, 1)
+enqueueCircularQueue(queue, 5)
+enqueueCircularQueue(queue, 5)
+enqueueCircularQueue(queue, 5)
+enqueueCircularQueue(queue, 10)
+
+console.log(dequeueCircularQueue(queue));
+console.log('queue ==>', queue);
