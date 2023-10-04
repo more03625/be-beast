@@ -37,3 +37,12 @@ console.log('display ====> ', display(myQueue));
 console.log('peek ====> ', peek(myQueue));
 console.log('isEmpty ====> ', isEmpty(myQueue));
 console.log('size ====> ', size(myQueue));
+
+/*
+    Steps to understand the concepts of Queue using array
+        i. Clear the concepts of array.
+        ii. Clear the rules of Queue.
+        iii. Draw it on whiteboard
+        iv. refer to notes.
+        v. Solve few problems.
+*/

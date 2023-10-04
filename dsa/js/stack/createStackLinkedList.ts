@@ -92,3 +92,12 @@ export {
     display,
     theStack,
 }
+
+/*
+    Steps to understand the concepts of Stack using Linked List
+        i. Clear the concepts of Linked List
+        ii. Clear the rules of stack.
+        iii. Draw it on whiteboard
+        iv. refer to notes.
+        v. Solve few problems.
+*/

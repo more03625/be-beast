@@ -59,3 +59,12 @@ console.log("Peek ====> ", stack.peek());
 console.log("Size ====> ", stack.size());
 console.log("isEmpty ====> ", stack.isEmpty());
 console.log("clear ====> ", stack.clear());
+
+/*
+    Steps to understand the concepts of Stack
+        i. Clear the concepts of array
+        ii. Clear the rules of stack.
+        iii. Draw it on whiteboard
+        iv. refer to notes.
+        v. Solve few problems.
+*/
