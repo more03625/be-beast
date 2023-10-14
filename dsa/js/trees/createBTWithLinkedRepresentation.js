@@ -1,4 +1,4 @@
-const createNode = (data) => {
+const createNode = (data, left = null, right = null) => {
     return {
         data: data,
         left: null,
@@ -30,6 +30,14 @@ const inOrderTraversal = (node, result = []) => {
     inOrderTraversal(node.right, result);
 
     return result;
+}
+
+const iterativePreOrder = (root) => {
+    if(!root){
+        return null
+    }
+
+    
 }
 
 let node = null;
