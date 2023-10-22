@@ -179,7 +179,9 @@ function printSomethingForOneTime() {
 /* Q8. Implement Memoize function */
 
 const doSomeCalculations = (num1, num2) => {
-  for (let i = 0; i < 100000000; i++) { }
+  for (let i = 0; i < 100000000; i++) {
+    // console.log('Ran billion times');
+  }
   return num1 + num2;
 }
 
@@ -214,6 +216,14 @@ function myMemo(fn, context) {
 // console.time("2 =============> 5,6")
 // letsMemo(5, 6)
 // console.timeEnd("2 =============> 5,6");
+
+// This
+
+const arr = () => {
+  console.log(this);
+}
+
+arr()
 
 /*
     * Closure: Inner variable can access of outer & outer variables. that's called closure.

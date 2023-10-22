@@ -33,11 +33,9 @@ const inOrderTraversal = (node, result = []) => {
 }
 
 const iterativePreOrder = (root) => {
-    if(!root){
+    if (!root) {
         return null
     }
-
-    
 }
 
 let node = null;
@@ -46,8 +44,8 @@ node = insert(node, 5);
 node = insert(node, 6);
 node = insert(node, 3);
 node = insert(node, 1);
+console.log(JSON.stringify(node));
 
 // Perform an in-order traversal to get the sorted values
-console.log(JSON.stringify(node));
 const sortedValues = inOrderTraversal(node);
 console.log(sortedValues);
