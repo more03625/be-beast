@@ -36,11 +36,9 @@ const display = (head) => {
     let c = 0
     let current = head;
     while (current) {
-        console.log("Display ===> ", current);
         current = current.next;
         c++
     }
-    console.log("Count of Element in LinkedList ====> ", c);
 }
 
 const recursiveDisplay = (head) => {
@@ -49,7 +47,6 @@ const recursiveDisplay = (head) => {
         return;
     }
 
-    console.log("recursiveDisplay ===> ", head.data);
     recursiveDisplay(head.next)
 }
 

@@ -13,7 +13,6 @@ const createPriorityQueue = () => {
             return null;
         }
 
-
         const rootNode = heap[0];
         const lastNode = heap.pop();
 

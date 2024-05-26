@@ -1,7 +1,8 @@
 export const reverseArray = (arr) => {
-  let i = 0,
-    j = arr.length - 1,
-    temp;
+  let i = 0;
+  let j = arr.length - 1;
+  let temp;
+
   while (arr[i] < arr[j]) {
     temp = arr[i];
     arr[i] = arr[j];
@@ -12,4 +13,4 @@ export const reverseArray = (arr) => {
   return arr;
 };
 
-// console.log(reverseArray([2, 5, 6, 8, 4]));
+console.log(reverseArray([2, 5, 6, 8, 4]));
