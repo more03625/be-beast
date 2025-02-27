@@ -6,7 +6,7 @@
 /resume
 /images
 /dsa/images
-# /docs
+/docs
 # /examples
 dump.rdb
 # Logs
